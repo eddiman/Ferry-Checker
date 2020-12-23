@@ -1,36 +1,81 @@
 .main-content {
   max-width: 1200px;
-  margin: auto; }
+  margin: auto;
+  padding: 1rem; }
+  .main-content .from-destination {
+    font-size: 4rem;
+    color: #2f2f2f;
+    text-align: center; }
+    @media only screen and (max-width: 600px) {
+      .main-content .from-destination {
+        font-size: 2.5rem;
+        margin-top: 1rem; } }
   .main-content .inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     flex-direction: column; }
-    .main-content .inner .ferry {
-      height: 50px;
-      width: 100px;
-      background-color: #000;
+    .main-content .inner h1 {
+      font-size: 4rem;
+      text-align: center;
+      margin-top: 8rem; }
+      @media only screen and (max-width: 600px) {
+        .main-content .inner h1 {
+          font-size: 2.5rem;
+          margin-top: 5rem; } }
+    .main-content .inner h2 {
+      font-size: 2rem; }
+    .main-content .inner .ferry-container {
       position: absolute;
-      top: 25vh;
+      top: 16vh;
       left: -100px;
-      animation: 3s ease-out forwards moveToMidfromLeft; }
-    .main-content .inner .waves {
-      position: relative;
-      height: 50px;
-      background: radial-gradient(circle at 49% -38%, #fff 6%, white 38%, white 40%, #ff000000 10%, #ff000000);
-      background-size: 75px 100px; }
+      animation: 8s ease-out forwards moveToMidfromLeft; }
+      .main-content .inner .ferry-container .ferry {
+        position: relative;
+        animation: 3s ease-in-out infinite running oscillateFerry;
+        background-color: #000;
+        height: 100px;
+        width: 175px;
+        z-index: -1; }
     .main-content .inner .water {
       position: absolute;
-      top: 29vh;
+      top: 28vh;
       left: 0;
       right: 0;
       bottom: 0;
       z-index: -1;
-      background-color: #3d90ff; }
+      background-color: #3d90ff;
+      animation: 3s ease-in-out .5s infinite running oscillateWaves; }
+    .main-content .inner .waves {
+      position: relative;
+      height: 50px;
+      top: -1.5rem;
+      background: radial-gradient(circle at 49% -38%, #cbe8ff00 6%, #cbe8ff00 38%, #cbe8ff 40%, #3d90ff 10%, #3d90ff);
+      background-size: 75px 100px; }
 
 @keyframes moveToMidfromLeft {
-  from {
-    left: 0; }
-  to {
-    left: 50vw; } }
+  0% {
+    left: 0;
+    top: 19vh; }
+  50% {
+    left: 50vw;
+    top: 20vh; }
+  100% {
+    left: 50vw;
+    top: 19vh; } }
+
+@keyframes oscillateWaves {
+  0% {
+    top: 28vh; }
+  50% {
+    top: 29vh; }
+  100% {
+    top: 28vh; } }
+
+@keyframes oscillateFerry {
+  0% {
+    top: 0; }
+  50% {
+    top: 1vh; }
+  100% {
+    top: 0; } }

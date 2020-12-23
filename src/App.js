@@ -25,7 +25,13 @@ const App = () => {
     }     else {
       return nextTime.getMinutes();
     }
-
+    }
+    const correctHours = (nextTime) => {
+    if (nextTime.getHours() < 10) {
+      return "0" + nextTime.getHours();
+    }     else {
+      return nextTime.getHours();
+    }
   }
 
   let nextTime = getTime(data.nexttime);
@@ -33,15 +39,20 @@ const App = () => {
 
   return (
       <main className={"main-content"}>
+        {console.log(nextTime.getDay())}
+        <h1 className={"from-destination"}>Fra Stavanger (Mortavika)</h1>
         <div className={"inner"}>
+          <div className={"ferry-container"}>
           <div className={"ferry"}/>
-
+          </div>
+          {console.log(window.location.href)}
           <div className={"water"}>
             <div className={"waves"}/>
           </div>
           {status === "fetched" ? <>
             <h1>{"Ferjå går om " + getMinutes(data.nexttime) + " minuttar!"}</h1>
-            <h2>An går klokkå {nextTime.getHours() + ":" + correctMinutes(nextTime) + " den " + nextTime.getDay() + ". " + months[nextTime.getMonth()] + ", " + nextTime.getFullYear()}</h2></> : "" }
+            <h2>Den går klokkå {correctHours(nextTime) + ":" + correctMinutes(nextTime) + " den " + nextTime.getDate() + ". " + months[nextTime.getMonth()] + ", " + nextTime.getFullYear()}</h2></>
+              : <h1>fdafaf sdfdsf sdf dsfsd</h1> }
 
         </div>
         { console.log(getTime(data.nexttime))

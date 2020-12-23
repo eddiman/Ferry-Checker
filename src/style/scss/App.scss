@@ -1,0 +1,40 @@
+.main-content {
+  max-width: 1200px;
+  margin: auto;
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    .ferry {
+      height:50px;
+      width:100px;
+      background-color: #000;
+      position: absolute;
+      top: 25vh;
+      left: -100px;
+      animation: 3s ease-out forwards moveToMidfromLeft; ;
+    }
+    .waves {
+      position: relative;
+      height: 50px;
+      background: radial-gradient(circle at 49% -38%, #fff 6%, white 38%, white 40%, #ff000000 10%, #ff000000);
+      background-size:75px 100px;
+    }
+    .water {
+      position: absolute;
+      top: 29vh;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: #3d90ff;
+    }
+  }
+}
+
+@keyframes moveToMidfromLeft {
+  from {left: 0;}
+  to {left: 50vw;}
+}

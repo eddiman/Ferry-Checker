@@ -1,3 +1,4 @@
+$ocean-color:  #3d90ff;
 .main-content {
   max-width: 1200px;
   margin: auto;
@@ -23,11 +24,16 @@
       margin-top: 8rem;
       @media only screen and (max-width: 600px) {
         font-size: 2.5rem;
-        margin-top: 5rem;
+        margin-top: 3rem;
       }
     }
     h2 {
       font-size: 2rem;
+      text-align: center;
+      @media only screen and (max-width: 600px) {
+        font-size: 1.5rem;
+
+      }
     }
 
     .ferry-container {
@@ -51,7 +57,7 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-      background-color: #3d90ff;
+      background-color: $ocean-color;
       animation: 3s ease-in-out .5s infinite running oscillateWaves; ;
 
     }
@@ -59,17 +65,38 @@
       position: relative;
       height: 50px;
       top: -1.5rem;
-      background: radial-gradient(circle at 49% -38%, #cbe8ff00 6%, #cbe8ff00 38%, #cbe8ff 40%, #3d90ff 10%, #3d90ff);
+      background: radial-gradient(circle at 49% -38%, #cbe8ff00 6%, #cbe8ff00 38%, #cbe8ff 40%, $ocean-color 10%, $ocean-color);
       background-size: 75px 100px;
 
     }
+    .change-depart-place-btn {
+      color: white;
+      border: solid 1px white;
+      padding: .5rem 1rem;
+      border-radius: 2px;
+      background-color: rgba(0,0,0,0);
+      transition: all .2s;
+      position: absolute;
+      bottom: 1rem;
+      font-size: 1.25rem;
+      @media only screen and (max-width: 600px) {
+        position: relative;
+        bottom: 0;
+      }
+
+      &:hover, &:focus {
+        background-color: white;
+        color: $ocean-color;
+      }
+    }
   }
+
 }
 
 @keyframes moveToMidfromLeft {
   0% {left: 0; top: 19vh;}
-  50% {left: 50vw; top: 20vh;}
-  100% {left: 50vw; top: 19vh;}
+  50% {left: 40vw; top: 20vh;}
+  100% {left: 40vw; top: 19vh;}
 }
 @keyframes oscillateWaves {
   0% {top: 28vh;}

@@ -22,9 +22,13 @@
       @media only screen and (max-width: 600px) {
         .main-content .inner h1 {
           font-size: 2.5rem;
-          margin-top: 5rem; } }
+          margin-top: 3rem; } }
     .main-content .inner h2 {
-      font-size: 2rem; }
+      font-size: 2rem;
+      text-align: center; }
+      @media only screen and (max-width: 600px) {
+        .main-content .inner h2 {
+          font-size: 1.5rem; } }
     .main-content .inner .ferry-container {
       position: absolute;
       top: 16vh;
@@ -52,16 +56,33 @@
       top: -1.5rem;
       background: radial-gradient(circle at 49% -38%, #cbe8ff00 6%, #cbe8ff00 38%, #cbe8ff 40%, #3d90ff 10%, #3d90ff);
       background-size: 75px 100px; }
+    .main-content .inner .change-depart-place-btn {
+      color: white;
+      border: solid 1px white;
+      padding: .5rem 1rem;
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0);
+      transition: all .2s;
+      position: absolute;
+      bottom: 1rem;
+      font-size: 1.25rem; }
+      @media only screen and (max-width: 600px) {
+        .main-content .inner .change-depart-place-btn {
+          position: relative;
+          bottom: 0; } }
+      .main-content .inner .change-depart-place-btn:hover, .main-content .inner .change-depart-place-btn:focus {
+        background-color: white;
+        color: #3d90ff; }
 
 @keyframes moveToMidfromLeft {
   0% {
     left: 0;
     top: 19vh; }
   50% {
-    left: 50vw;
+    left: 40vw;
     top: 20vh; }
   100% {
-    left: 50vw;
+    left: 40vw;
     top: 19vh; } }
 
 @keyframes oscillateWaves {

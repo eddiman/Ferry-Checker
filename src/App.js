@@ -3,8 +3,9 @@ import {useFetch} from "./hooks";
 import {useState} from "react";
 import {useEffect} from "react";
 
+
 const App = () => {
-  const fetchURL = "http://37.191.180.48:5000/ferga/now";
+  const fetchURL = "https://api.ferja.xyz/ferga/now";
   const { status, data, error } = useFetch(fetchURL);
   const [currentFerry, setCurrentFerry] = useState("arsvagen");
   const [currentFerryData, setCurrentFerryData] = useState(
